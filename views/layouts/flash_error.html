@@ -1,0 +1,13 @@
+{{define "FlashError"}}
+{{- if .ErrorMessages -}}
+<article class="message is-danger">
+  <div class="message-body">
+    <ul>
+  {{- range .ErrorMessages -}}
+      <li>{{.}}</li >
+  {{end}}
+    </ul>
+  </div>
+</article>
+{{end}}
+{{end}}

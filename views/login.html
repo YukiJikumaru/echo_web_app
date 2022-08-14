@@ -1,0 +1,40 @@
+{{template "HEADER" .}}
+<div class="container is-fluid">
+  <h1 class="title">ログインフォーム</h1>
+  {{template "FlashSuccess" .}}
+  {{template "FlashError" .}}
+  <form method="post" action="/login">
+    <div class="field">
+      <label class="label" for="email">メールアドレス</label>
+      <input class="input" type="text" name="email" />
+    </div>
+    <div class="field">
+      <label class="label" for="password">パスワード</label>
+      <input class="input" type="text" name="password" />
+    </div>
+    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}" />
+    <button class="button is-link is-fullwidth">ログイン</button>
+  </form>
+
+  <ul>
+    <li>
+      <ul>
+        <li>test1@example.com</li>
+        <li>pass1</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>test2@example.com</li>
+        <li>pass2</li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>test2@example.com</li>
+        <li>pass2</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+{{template "FOOTER" .}}

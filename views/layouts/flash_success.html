@@ -1,0 +1,13 @@
+{{define "FlashSuccess"}}
+{{- if .SuccessMessages -}}
+<article class="message is-success">
+  <div class="message-body">
+    <ul>
+  {{- range .SuccessMessages -}}
+      <li>{{.}}</li >
+  {{end}}
+    </ul>
+  </div>
+</article>
+{{end}}
+{{end}}

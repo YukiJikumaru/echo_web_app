@@ -1,0 +1,14 @@
+{{template "HEADER" .}}
+    <div class="container is-fluid">
+      <h1 class="title">TOPページ</h1>
+      {{template "FlashSuccess" .}}
+      {{template "FlashError" .}}
+      <ul>
+        <li><a href="/">/</a></li>
+        <li><a href="/test">/test</a></li>
+        <li><a href="/signup">/signup</a></li>
+        <li><a href="/login">/login</a></li>
+        <li><a href="/logout">/logout</a></li>
+      </ul>
+    </div>
+{{template "FOOTER" .}}

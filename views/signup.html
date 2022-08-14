@@ -1,0 +1,41 @@
+{{template "HEADER" .}}
+    <div class="container is-fluid">
+      <h1 class="title">新規登録フォーム</h1>
+      {{- if .ErrorMessages -}}
+      <article class="message is-danger">
+        <div class="message-body">
+          <ul>
+        {{- range .ErrorMessages -}}
+            <li>{{.}}</li >
+        {{end}}
+          </ul>
+        </div>
+      </article>
+      {{end}}
+      <form method="post" action="/signup">
+        <div class="field">
+          <label class="label" for="email">メールアドレス</label>
+          {{- if .Email -}}
+          <input class="input" type="text" name="email" value="{{.Email}}" />
+          {{else}}
+          <input class="input" type="text" name="email" />
+          {{end}}
+        </div>
+        <div class="field">
+          <label class="label" for="password">パスワード</label>
+          <input class="input" type="text" name="password" />
+        </div>
+        <div class="field">
+          <label class="label" for="passwordConfirm">パスワード(確認)</label>
+          <input class="input" type="text" name="passwordConfirm" />
+        </div>
+        <input type="hidden" name="csrf_token" value="{{.CSRFToken}}" />
+        <button class="button is-link is-fullwidth">登録</button>
+      </form>
+
+      <ul>
+        <li>test@example.com</li>
+        <li>pass</li>
+      </ul>
+    </div>
+{{template "FOOTER" .}}
