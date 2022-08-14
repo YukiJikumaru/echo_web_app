@@ -3,8 +3,8 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/labstack/echo/v4"
 	"github.com/YukiJikumaru/echo_web_app/middlewares"
+	"github.com/labstack/echo/v4"
 )
 
 type IndexLoggedInParams struct {
@@ -19,7 +19,7 @@ type IndexLoggedInParams struct {
 const Template = "index.html"
 const Title = "TOPページ"
 
-func IndexHandler(c echo.Context) error {
+func GetIndexHandler(c echo.Context) error {
 	println("IsLoggedIn? ", middlewares.IsLoggedIn(c))
 
 	successMessages, _ := middlewares.GetFlashSuccess(c)
